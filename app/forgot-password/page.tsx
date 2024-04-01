@@ -6,7 +6,6 @@ import { toast, Toaster } from "react-hot-toast";
 import axios from 'axios';
 import { useGlobalContext } from '@/helpers/zustand/globalContext';
 import { NextRequest } from 'next/server';
-import Cookies from "js-cookie";
 
 
 const ForgotPassword = () => {

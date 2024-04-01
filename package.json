@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.2.10",
     "@radix-ui/react-slot": "^1.0.2",
     "@zegocloud/zego-uikit-prebuilt": "^2.0.1",
     "axios": "^1.6.8",
@@ -16,6 +17,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "dotenv": "^16.4.5",
+    "framer-motion": "^11.0.24",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.363.0",

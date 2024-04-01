@@ -5,13 +5,14 @@ import { useRouter } from 'next/navigation';
 import { toast, Toaster } from 'react-hot-toast';
 import axios from 'axios';
 import Link from 'next/link';
+import LoadingPage from '@/components/loading-page';
 
 const Login = () => {
   const [userdata, setUserData] = useState({
     email: "",
     password: ""
   });
-
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   const handleLogin = async() => {
@@ -20,16 +21,23 @@ const Login = () => {
         toast.error("Please fill all the fields");
         return;
       }
+      setIsLoading(true);
       const response = await axios.post("/api/users/login", userdata);
       console.log(response.data);
       toast.success("User logged in successfully");
       router.push("/profile");
     } catch (error) {
       toast.error(`Something went wrong: ${error}`);
+    }finally{
+      
     }
   }
 
-  return (
+  if(isLoading){
+    return <LoadingPage />
+  }
+
+ return (
     <div>
       <Toaster />
       <h1>Login</h1>
